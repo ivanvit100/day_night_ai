@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"><!--Кодировка-->
+	<!-- Primary Meta Tags -->
+	<title>Q-learning | Использование ИИ в браузере</title>
+	<meta name="title" content="Q-learning | Использование ИИ в браузере">
+	<meta name="description" content=" На данной странице Вы можете ознакомиться с примером использования искусственного интеллекта, обученного методом Q-learning, в браузере.">
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://ai.ivanvit.ru/">
+	<meta property="og:title" content="Q-learning | Использование ИИ в браузере">
+	<meta property="og:description" content=" На данной странице Вы можете ознакомиться с примером использования искусственного интеллекта, обученного методом Q-learning, в браузере.">
+	<meta property="og:image" content="http://ai.ivanvit.ru/media/preview.png">
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://ai.ivanvit.ru/">
+	<meta property="twitter:title" content="Q-learning | Использование ИИ в браузере">
+	<meta property="twitter:description" content=" На данной странице Вы можете ознакомиться с примером использования искусственного интеллекта, обученного методом Q-learning, в браузере.">
+	<meta property="twitter:image" content="http://ai.ivanvit.ru/media/preview.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!--Размер экрана-->
+	<meta name="theme-color" content="#ffffff"><!--Цвет поисковой строки-->
+	<meta name="keywords" content="ai, js, tensorflow, example, theory, ии, нейронные сети, разработка, пример, создание, классификатор, ivanvit"><!--Keywords-->
+	<link rel="stylesheet" href="/media/style.css"><!--Файл стиля-->
+	<link rel="shortcut icon" href="/media/logo.png" type="image/png"><!--Логотип-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!--Сторонние анимации-->
+	<link rel="preconnect" href="https://fonts.googleapis.com"><!--Шрифты-->
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet"> 
+</head>
+<body>
+	<div id="preloader" v-if="seen"><img src="/media/preloader.svg" alt="Загрузка..." id="pre_img"></div><!--Прелоадер-->
+	<div id="language"><!--Блок смены языка-->
+		<img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" alt="ru" id="ru" class="lang" onclick="lang_click(1)">
+		<img src="https://www.nicepng.com/png/full/6-63506_usa-png-clipart-american-flag-icon-png.png" alt="en" id="en" class="lang" onclick="lang_click(2)">
+	</div>
+	<div class="background"><!--Анимация заднего фона-->
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+		<div class="cube"></div>
+	</div>
+	<div id="pre" class="animate__animated animate__bounceInRight"><!--Приветственный экран-->
+		<h1 id="hello">{{message}}</h1>
+		<br>
+		<span id="first">{{message}}</span>
+		<br>
+		<span id="second" v-if="seen">{{message}}</span>
+		<br>
+		<span id="third">{{message}}</span>
+		<ul>
+			<li id="hide" v-if="seen">{{message}}</li>
+			<li id="li_2">{{message}}</li>
+			<li id="li_3">{{message}}</li>
+		</ul>
+		<button id="next" v-bind:title="next" v-if="seen">{{message}}</button>
+	</div>
+	<main id="main"><!--Основной блок-->
+		<center>
+			<div>
+				<div id="picture">
+					<h1 id="i">{{message}}</h1>
+					<img src="/media/wait.png" id="selected-image" onclick="zoom()">
+					<transition name="fade">
+						<div id="dark" v-if="seen" v-on:click="close" class="animate__animated animate__fadeIn">
+							<div id="dark-img">
+								<button id="close" v-on:click="close">x</button>
+								<!--<img src="/media/wait.png" id="d-img">-->
+							</div>
+						</div>
+					</transition>
+					<br>
+					<label id="l1" for="image-selector" class="custom-file-upload">{{message}}</label>
+					<input id="image-selector" type="file" accept="image/png, image/jpg, image/jpeg" name="img">
+					<h2 id="final">{{message}}</h2>
+				</div>
+				<div style="width: 320px">
+					<button id="predict-button" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+					<button id="theory" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+				</div>
+			</div>
+		</center>
+		<hr style="display: none;" id="hr">
+		<footer id="footer"><!--Подвал/контакты-->
+			<div id="copyright"><img src="/media/copyright.svg" alt="copyright" id="copyright_svg"><a id="f" href="https://ivanvit.ru">{{message}}</a></div>
+		</footer>
+	</main>
+	<!--Подключение скриптов-->
+	<script async="true" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.15.1"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<script type="text/javascript" src="/media/v-script.js"></script>
+	<script type="text/javascript" src="/media/script.js"></script>
+</body>
+</html>
