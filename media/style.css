@@ -342,4 +342,7 @@ input[type="file"]{
 	#close{
 		display: none;
 	}
+	.cube:nth-child(2), .cube:nth-child(3), .cube:nth-child(5), .cube:nth-child(6){
+		display: none;
+	}
 }
