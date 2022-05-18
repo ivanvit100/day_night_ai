@@ -32,8 +32,8 @@ let timer2 = setInterval(t2, 8000);
 
 document.getElementById("next").onclick = async function(){
     document.querySelector("#main").style.display = "inline-block";
-    document.querySelector("#footer").style.display = "block";
-    document.querySelector("#hr").style.display = "flex";
+    document.querySelector("#footer").style.display = "table-row";
+    document.querySelector("#hr").style.display = "block";
 	document.querySelector(".background").style.opacity = 1;
 	document.querySelector("#pre").style.width = "calc(40% - 20px)";
 	second.seen = false;
