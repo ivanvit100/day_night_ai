@@ -327,7 +327,6 @@ input[type="file"]{
 @media(max-width: 600px){
 	#language{
 		bottom: calc(100% - 33px);
-		background-color: rgba(0, 0, 0, 0);
 	}
 	footer{
 		font-size: 1em;
