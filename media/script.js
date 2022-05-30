@@ -112,5 +112,5 @@ document.getElementById("predict-button").onclick = async function(){
 };
 
 document.getElementById("theory").onclick = function(){
-    document.location.href = "https://drive.google.com/drive/folders/166se5gKfCCT0baC7LWjBxNXD0_K79W1B";
+    document.location.href = "http://cloud.ivanvit.ru/index.php/s/BSdWJf34XBSieBW";
 }
