@@ -3,7 +3,25 @@ document.addEventListener("DOMContentLoaded", function(event){
         preloader.seen = false;
     }, 500);
 });
-
+function guide(){
+    introJs().setOptions({
+        steps: [{
+            intro: lang_intro(0)
+        }, {
+            element: document.querySelector('#l1'),
+            intro: lang_intro(1)
+        }, {
+            element: document.querySelector("#selected-image"),
+            intro: lang_intro(2)
+        }, {
+            element: document.querySelector('#predict-button'),
+            intro: lang_intro(3)
+        }, {
+            element: document.querySelector('#theory'),
+            intro: lang_intro(4)
+        }
+    ]}).start();
+}
 function close(){
 	dark.seen = false; 
 	document.querySelector("#picture").removeChild(document.querySelector('.d-img'));
@@ -29,17 +47,6 @@ function t2(){
 }
 let timer1 = setInterval(t1, 5000);
 let timer2 = setInterval(t2, 8000);
-
-document.getElementById("next").onclick = async function(){
-    document.querySelector("#main").style.display = "inline-block";
-    document.querySelector("#footer").style.display = "table-row";
-    document.querySelector("#hr").style.display = "block";
-	document.querySelector(".background").style.opacity = 1;
-	document.querySelector("#pre").style.width = "calc(40% - 20px)";
-	second.seen = false;
-    hide.seen = false;
-    next.seen = false;
-}
 
 document.getElementById("image-selector").addEventListener('change', (event) => {
     let reader = new FileReader();

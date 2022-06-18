@@ -22,6 +22,7 @@
 	<meta name="theme-color" content="#ffffff"><!--Цвет поисковой строки-->
 	<meta name="keywords" content="ai, js, tensorflow, example, theory, ии, нейронные сети, разработка, пример, создание, классификатор, ivanvit"><!--Keywords-->
 	<link rel="stylesheet" href="./media/style.css"><!--Файл стиля-->
+	<link rel="stylesheet" href="./media/introjs.css">
 	<link rel="shortcut icon" href="./media/logo.png" type="image/png"><!--Логотип-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!--Сторонние анимации-->
 	<link rel="preconnect" href="https://fonts.googleapis.com"><!--Шрифты-->
@@ -49,22 +50,14 @@
 		<br>
 		<span id="first">{{message}}</span>
 		<br>
-		<span id="second" v-if="seen">{{message}}</span>
-		<br>
-		<span id="third">{{message}}</span>
-		<ul>
-			<li id="hide" v-if="seen">{{message}}</li>
-			<li id="li_2">{{message}}</li>
-			<li id="li_3">{{message}}</li>
-		</ul>
-		<button id="next" v-bind:title="next" v-if="seen">{{message}}</button>
+		<span id="second">{{message}}</span>
 	</div>
 	<main id="main"><!--Основной блок-->
 		<center>
 			<div>
 				<div id="picture">
 					<h1 id="i">{{message}}</h1>
-					<img src="./media/wait.png" id="selected-image" onclick="zoom()">
+					<img data-position="auto" data-scroll-to="tooltip" src="./media/wait.png" id="selected-image" onclick="zoom()">
 					<transition name="fade">
 						<div id="dark" v-if="seen" v-on:click="close" class="animate__animated animate__fadeIn">
 							<div id="dark-img">
@@ -74,13 +67,14 @@
 						</div>
 					</transition>
 					<br>
-					<label id="l1" for="image-selector" class="custom-file-upload">{{message}}</label>
+					<label data-position="auto" data-disable-interaction="true" data-scroll-to="tooltip" data-disable-interaction="true" id="l1" for="image-selector" class="custom-file-upload">{{message}}</label>
 					<input id="image-selector" type="file" accept="image/png, image/jpg, image/jpeg" name="img">
 					<h2 id="final">{{message}}</h2>
 				</div>
 				<div style="width: 320px">
-					<button id="predict-button" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
-					<button id="theory" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+					<button data-position="auto" data-scroll-to="tooltip" data-disable-interaction="true" id="predict-button" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+					<button data-position="auto" data-scroll-to="tooltip" data-disable-interaction="true" id="theory" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+					<button id="intro" onclick="guide()"><a style="font-size: 12px">?</a> {{message}}</button>
 				</div>
 			</div>
 		</center>
@@ -94,5 +88,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 	<script type="text/javascript" src="./media/v-script.js"></script>
 	<script type="text/javascript" src="./media/script.js"></script>
+	<script async="true" type="text/javascript" src="./media/intro.js"></script>
 </body>
 </html>
