@@ -71,7 +71,7 @@ a{
 }
 hr{
 	width: 65%;
-	display: block;
+	display: inherit;
 	margin-top: 50px;
 }
 button{
