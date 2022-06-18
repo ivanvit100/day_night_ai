@@ -45,43 +45,45 @@
 		<div class="cube"></div>
 		<div class="cube"></div>
 	</div>
-	<div id="pre" class="animate__animated animate__bounceInRight"><!--Приветственный экран-->
+	<div id="pre" class="animate__animated animate__bounceInLeft"><!--Приветственный экран-->
 		<h1 id="hello">{{message}}</h1>
 		<br>
 		<span id="first">{{message}}</span>
 		<br>
-		<span id="second">{{message}}</span>
+		<span id="second"><a href="https:// ivanvit.ru">{{message}}</a></span>
 	</div>
 	<main id="main"><!--Основной блок-->
-		<center>
-			<div>
-				<div id="picture">
-					<h1 id="i">{{message}}</h1>
-					<img data-position="auto" data-scroll-to="tooltip" src="./media/wait.png" id="selected-image" onclick="zoom()">
-					<transition name="fade">
-						<div id="dark" v-if="seen" v-on:click="close" class="animate__animated animate__fadeIn">
-							<div id="dark-img">
-								<button id="close" v-on:click="close">x</button>
+		<div id="tbl-container">
+			<center>
+				<div>
+					<div id="picture">
+						<h1 id="i">{{message}}</h1>
+						<img data-position="auto" data-scroll-to="tooltip" src="./media/wait.png" id="selected-image" onclick="zoom()">
+						<transition name="fade">
+							<div id="dark" v-if="seen" v-on:click="close" class="animate__animated animate__fadeIn">
+								<div id="dark-img">
+									<button id="close" v-on:click="close">x</button>
 								<!--<img src="/media/wait.png" id="d-img">-->
+								</div>
 							</div>
-						</div>
-					</transition>
-					<br>
-					<label data-position="auto" data-disable-interaction="true" data-scroll-to="tooltip" data-disable-interaction="true" id="l1" for="image-selector" class="custom-file-upload">{{message}}</label>
-					<input id="image-selector" type="file" accept="image/png, image/jpg, image/jpeg" name="img">
-					<h2 id="final">{{message}}</h2>
+						</transition>
+						<br>
+						<label data-position="auto" data-disable-interaction="true" data-scroll-to="tooltip" data-disable-interaction="true" id="l1" for="image-selector" class="custom-file-upload">{{message}}</label>
+						<input id="image-selector" type="file" accept="image/png, image/jpg, image/jpeg" name="img">
+						<h2 id="final">{{message}}</h2>
+					</div>
+					<div style="width: 320px">
+						<button data-position="auto" data-scroll-to="tooltip" data-disable-interaction="true" id="predict-button" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+						<button data-position="auto" data-scroll-to="tooltip" data-disable-interaction="true" id="theory" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
+						<button id="intro" onclick="guide()"><a style="font-size: 12px">?</a> {{message}}</button>
+					</div>
 				</div>
-				<div style="width: 320px">
-					<button data-position="auto" data-scroll-to="tooltip" data-disable-interaction="true" id="predict-button" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
-					<button data-position="auto" data-scroll-to="tooltip" data-disable-interaction="true" id="theory" class="btn btn-dark float-right animate__animated" v-bind:title="text">{{message}}</button>
-					<button id="intro" onclick="guide()"><a style="font-size: 12px">?</a> {{message}}</button>
-				</div>
-			</div>
-		</center>
-		<hr id="hr">
-		<footer id="footer"><!--Подвал/контакты-->
-			<div id="copyright"><img src="./media/copyright.svg" alt="copyright" id="copyright_svg"><a id="f" href="https://ivanvit.ru">{{message}}</a></div>
-		</footer>
+			</center>
+			<hr id="hr">
+			<footer id="footer"><!--Подвал/контакты-->
+				<div id="copyright"><img src="./media/copyright.svg" alt="copyright" id="copyright_svg"><a id="f" href="https://ivanvit.ru">{message}</a></div>
+			</footer>
+		</div>
 	</main>
 	<!--Подключение скриптов-->
 	<script async="true" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.15.1"></script>

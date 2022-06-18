@@ -39,7 +39,7 @@ body::-webkit-scrollbar-thumb{
 	border: 3px solid #eee;
 }
 main{
-	display: table;
+	display: inline-block;
 	align-items: center;
 	padding-left: 20px;
 	width: calc(58% - 20px);
@@ -201,6 +201,10 @@ input[type="file"]{
 	animation-delay: 10s;
 	left: 50vw;
 	top: 10vh;
+}
+#tbl-container{
+	width: 100%;
+	display: table;
 }
 .lang{
 	margin: 5px;
