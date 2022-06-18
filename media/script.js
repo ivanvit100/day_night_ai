@@ -20,7 +20,11 @@ function guide(){
             element: document.querySelector('#theory'),
             intro: lang_intro(4)
         }
-    ]}).start();
+    ], 
+    'scrollToElement': true, 
+    'scrollTo': 'tooltip',
+    'disableInteraction': true
+    }).start();
 }
 function close(){
 	dark.seen = false; 
