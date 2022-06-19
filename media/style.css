@@ -3,7 +3,7 @@ html, .introjs-overlay{
 	width: 100%;
 	height: 100%;
 }
-a, h1, h2, span, p, button, #l1, input[type="file"], ul, li, img, .introjs-button, .introjs-bullets, .introjs-tooltptext{
+a, h1, h2, span, p, button, #l1, input[type="file"], img, .introjs-button, .introjs-bullets, .introjs-tooltptext{
 	cursor: url(./link.png), auto;
 }
 *::selection{
@@ -116,9 +116,6 @@ input[type="file"]{
 }
 .custom-file-upload, #i, #final{
 	font-family: 'Balsamiq Sans', cursive;
-}
-#next{
-	color: black;
 }
 #copyright>img{
 	width: 1.15em;
