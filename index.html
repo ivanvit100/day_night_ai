@@ -21,10 +21,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!--Размер экрана-->
 	<meta name="theme-color" content="#ffffff"><!--Цвет поисковой строки-->
 	<meta name="keywords" content="ai, js, tensorflow, example, theory, ии, нейронные сети, разработка, пример, создание, классификатор, ivanvit"><!--Keywords-->
-	<link rel="stylesheet" href="./media/style.css"><!--Файл стиля-->
-	<link rel="stylesheet" href="./media/introjs.css">
+	<link rel="stylesheet" href="./css/style.css"><!--Файл стиля-->
+	<link rel="stylesheet" href="./css/introjs.css">
 	<link rel="shortcut icon" href="./media/logo.png" type="image/png"><!--Логотип-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><!--Сторонние анимации-->
+	<link rel="stylesheet" href="./css/animate.min.css"><!--Сторонние анимации-->
 	<link rel="preconnect" href="https://fonts.googleapis.com"><!--Шрифты-->
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
@@ -35,8 +35,8 @@
 <body>
 	<div id="preloader" v-if="seen"><img src="./media/preloader.svg" alt="Загрузка..." id="pre_img"></div><!--Прелоадер-->
 	<div id="language"><!--Блок смены языка-->
-		<img src="https://cdn.countryflags.com/thumbs/russia/flag-400.png" alt="ru" id="ru" class="lang" onclick="lang_click(1)">
-		<img src="https://www.nicepng.com/png/full/6-63506_usa-png-clipart-american-flag-icon-png.png" alt="en" id="en" class="lang" onclick="lang_click(2)">
+		<img src="./media/flag-ru.png" alt="ru" id="ru" class="lang" onclick="lang_click(1)">
+		<img src="./media/flag-en.png" alt="en" id="en" class="lang" onclick="lang_click(2)">
 	</div>
 	<div class="background"><!--Анимация заднего фона-->
 		<div class="cube"></div>
@@ -86,10 +86,10 @@
 		</div>
 	</main>
 	<!--Подключение скриптов-->
-	<script async="true" src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.15.1"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-	<script type="text/javascript" src="./media/v-script.js"></script>
-	<script type="text/javascript" src="./media/script.js"></script>
-	<script async="true" type="text/javascript" src="./media/intro.js"></script>
+	<script async="true" src="./js/tfjs.0.15.1.js"></script>
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript" src="./js/v-script.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
+	<script async="true" type="text/javascript" src="./js/intro.js"></script>
 </body>
 </html>

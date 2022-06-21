@@ -60,7 +60,7 @@ var instructions = new Vue({
     }
 });
 var first = new Vue({
-    el: '#first',
+    el: '#first', 
     data:{
         message: lang_change(1),
     }
